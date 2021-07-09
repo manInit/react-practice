@@ -1,6 +1,6 @@
-import '../globalStyles/index.sass';
+import './globalStyles/index.sass';
 import React from "react";
-import MainPage from "../pages/main/Main";
+import MainPage from "./pages/main/Main";
 
 const App = () => {
 
