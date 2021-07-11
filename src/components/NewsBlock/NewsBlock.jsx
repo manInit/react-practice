@@ -1,11 +1,12 @@
 import React from 'react';
 import CategoryBadge from "../CategoryBadge/CategoryBadge";
+import FromUsers from '../FromUsers/FromUsers';
 import './NewsBlock.sass';
 
 class NewsBlock extends React.Component {
   render() {
     let {
-      isLarge = false ,
+      isLarge = false,
       isRow = false,
       isReverse = false,
       marginBottom = '31px',
@@ -17,9 +18,17 @@ class NewsBlock extends React.Component {
     let height = isRow ? '182px' : '516px';
     let imageHeight = '270px';
     let flexDirection;
-    if (isRow) flexDirection = 'row';
-    else flexDirection = 'column';
-
+    let borderRadius;
+    
+    if (isRow) {
+      flexDirection = 'row';
+      if (isReverse) borderRadius = '0 5px 5px 0';
+      else borderRadius = '5px 0 0 5px';
+    } else { 
+      flexDirection = 'column';
+      borderRadius = '5px 5px 0 0';
+    }
+    
     if (isReverse) flexDirection += '-reverse';
 
     if (isLarge) {
@@ -43,7 +52,7 @@ class NewsBlock extends React.Component {
           width,
           height: isRow ? 'auto' : imageHeight
         }}>
-          <img src="#" alt="#"/>
+          <img style={{borderRadius}} src="#" alt="#"/>
           <CategoryBadge
             color={this.props.colorCategory}
             text={this.props.category}
@@ -54,13 +63,11 @@ class NewsBlock extends React.Component {
             className="newsBlock__title"
             style={{lineHeight: lh, fontSize: fs}}
           >{this.props.title}</h3>
-          <div className="newsBlock__author">
-            От
-            <a href="#"> Пользователя
-              <span className="newsBlock__user">{' ' + this.props.author}</span>
-            </a> -
-            <span className="newsBlock__date"> 21 {!isLarge ? <br/> : ''} янв. 2021</span>
-          </div>
+          <FromUsers
+            name="1"
+            isOneLine={isLarge}
+            userLink="#"
+          />
         </div>
       </div>
     );
