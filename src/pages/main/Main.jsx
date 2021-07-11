@@ -4,6 +4,7 @@ import FilterListNewsBlock from "../../components/FilterListNewsBlock/FilterList
 import ListNewsBlock from "../../components/ListNewsBlock/ListNewsBlock";
 import './main.sass';
 import Header from "../../components/Header/Header";
+import NewsLine from "../../components/NewsLine/NewsLine";
 
 
 class MainPage extends React.Component {
@@ -65,10 +66,9 @@ class MainPage extends React.Component {
   render() {
     return (
       <main className="mainPage">
-        <NavHeader
-          className="mainPage__navHeader"
-        />
+        <NavHeader/>
         <Header/>
+        <NewsLine className="mainPage__newsLine"/>
         <div className="container">
           <ListNewsBlock
             className="mainPage__news"
