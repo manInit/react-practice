@@ -8,7 +8,7 @@ class NavHeader extends React.Component {
     const socialIconStyle = {
       color: 'white',
       iconSize: '16px'
-    }
+    };
 
     return (
       <div className="navHeader">

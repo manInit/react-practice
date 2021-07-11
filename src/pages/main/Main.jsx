@@ -3,6 +3,7 @@ import NavHeader from "../../components/NavHeader/NavHeader";
 import FilterListNewsBlock from "../../components/FilterListNewsBlock/FilterListNewsBlock";
 import ListNewsBlock from "../../components/ListNewsBlock/ListNewsBlock";
 import './main.sass';
+import Header from "../../components/Header/Header";
 
 
 class MainPage extends React.Component {
@@ -67,6 +68,7 @@ class MainPage extends React.Component {
         <NavHeader
           className="mainPage__navHeader"
         />
+        <Header/>
         <div className="container">
           <ListNewsBlock
             className="mainPage__news"
